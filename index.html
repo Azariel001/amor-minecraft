@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CUCO - Amor de Siempre</title>
+<title>💖 Amor de Siempre 💖</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
@@ -26,9 +26,9 @@ body{
 
     background:
     linear-gradient(
-    rgba(255,120,180,0.25),
-    rgba(255,120,180,0.25)),
-    url("fondo.jpg");
+    rgba(255,120,180,0.20),
+    rgba(255,120,180,0.20)),
+    url("fondo.webp");
 
     background-size:cover;
     background-position:center;
@@ -57,8 +57,8 @@ body{
 
     position:absolute;
 
-    width:4px;
-    height:4px;
+    width:3px;
+    height:3px;
 
     background:white;
 
@@ -67,8 +67,7 @@ body{
     animation:blink 2s infinite;
 
     box-shadow:
-    0 0 10px white,
-    0 0 20px white;
+    0 0 8px white;
 }
 
 @keyframes blink{
@@ -107,14 +106,15 @@ body{
     image-rendering:pixelated;
 
     filter:
-    drop-shadow(0 0 8px #ff4da6)
-    drop-shadow(0 0 20px #ff006a)
-    drop-shadow(0 0 35px #ff66b3);
+    drop-shadow(0 0 4px #ff4da6)
+    drop-shadow(0 0 10px #ff006a);
 
     pointer-events:none;
     user-select:none;
 
-    opacity:0.95;
+    opacity:0.9;
+
+    will-change:transform;
 }
 
 @keyframes fall{
@@ -161,7 +161,7 @@ body{
     justify-content:center;
     align-items:center;
 
-    margin-bottom:40px;
+    margin-bottom:35px;
 }
 
 .main-heart{
@@ -171,12 +171,13 @@ body{
     image-rendering:pixelated;
 
     filter:
-    drop-shadow(0 0 15px #ff4da6)
-    drop-shadow(0 0 40px #ff0080)
-    drop-shadow(0 0 80px #ff66b3);
+    drop-shadow(0 0 10px #ff4da6)
+    drop-shadow(0 0 25px #ff0080);
 
     user-select:none;
     pointer-events:none;
+
+    will-change:transform;
 }
 
 @keyframes pulse{
@@ -194,7 +195,7 @@ body{
 
 .music-box{
 
-    background:rgba(0,0,0,0.45);
+    background:rgba(0,0,0,0.42);
 
     border:4px solid #ff6fb5;
 
@@ -207,11 +208,10 @@ body{
 
     color:white;
 
-    backdrop-filter:blur(6px);
+    backdrop-filter:blur(5px);
 
     box-shadow:
-    0 0 25px #ff4da6,
-    0 0 50px rgba(255,0,128,0.5);
+    0 0 20px #ff4da6;
 
     display:flex;
     flex-direction:column;
@@ -231,10 +231,10 @@ body{
     color:white;
 
     text-shadow:
-    0 0 10px #ff4da6,
-    0 0 20px #ff0080;
+    0 0 8px #ff4da6,
+    0 0 15px #ff0080;
 
-    margin-bottom:25px;
+    margin-bottom:20px;
 
     text-align:center;
 
@@ -247,11 +247,11 @@ body{
 
 .subtitle{
 
-    font-size:13px;
+    font-size:12px;
 
     color:#ffd6ea;
 
-    margin-bottom:20px;
+    margin-bottom:18px;
 
     text-align:center;
 
@@ -262,18 +262,17 @@ body{
 
 .line{
 
-    margin:20px auto;
+    margin:18px auto;
 
     width:80%;
-    height:6px;
+    height:5px;
 
     border-radius:20px;
 
     background:#ff6fb5;
 
     box-shadow:
-    0 0 10px #ff6fb5,
-    0 0 20px #ff6fb5;
+    0 0 8px #ff6fb5;
 }
 
 /* LETRA */
@@ -284,10 +283,10 @@ body{
 
     color:#fff0f7;
 
-    margin-top:20px;
+    margin-top:18px;
 
     text-shadow:
-    0 0 8px #ff80bf;
+    0 0 6px #ff80bf;
 
     text-align:center;
 
@@ -303,47 +302,69 @@ body{
     top:20px;
     left:20px;
 
-    background:rgba(0,0,0,0.4);
+    background:rgba(0,0,0,0.35);
 
     border:3px solid #ff6fb5;
 
-    padding:20px;
+    border-radius:18px;
+
+    padding:18px;
 
     color:white;
 
-    width:260px;
+    width:240px;
 
-    font-size:12px;
+    font-size:11px;
 
-    line-height:1.8;
+    line-height:1.7;
 
     box-shadow:
-    0 0 15px #ff4da6;
+    0 0 12px #ff4da6;
 }
 
 /* RESPONSIVE */
 
 @media(max-width:768px){
 
+    body{
+        overflow:hidden;
+    }
+
     .main-heart{
         width:220px;
     }
 
     .title{
-        font-size:15px;
+        font-size:14px;
+    }
+
+    .subtitle{
+        font-size:10px;
     }
 
     .lyrics{
-        font-size:11px;
+        font-size:10px;
     }
 
     .music-box{
-        padding:18px;
+        width:90%;
+        padding:16px;
+        backdrop-filter:none;
     }
 
     .click-message{
-        width:200px;
-        font-size:10px;
+        width:180px;
+        font-size:9px;
+        padding:12px;
+    }
+
+    .stars{
+        opacity:0.7;
+    }
+
+    .pixel-heart{
+        filter:
+        drop-shadow(0 0 3px #ff4da6);
     }
 }
 
@@ -366,7 +387,6 @@ body{
 
 <div class="hearts" id="hearts"></div>
 
-
 <!-- CONTENIDO -->
 
 <div class="container">
@@ -374,7 +394,7 @@ body{
     <!-- CORAZON -->
 
     <div class="heart-wrapper">
-        <img src="corazon.png" class="main-heart">
+        <img src="corazon.webp" class="main-heart">
     </div>
 
     <!-- PANEL -->
@@ -386,7 +406,7 @@ body{
         </div>
 
         <div class="subtitle">
-            ♫ Haz clic para reproducir la música ♫
+             Haz clic para reproducir la música 
         </div>
 
         <div class="line"></div>
@@ -409,11 +429,18 @@ document.body.addEventListener("click", () => {
 
 }, { once:true });
 
+/* OPTIMIZACION */
+
+const isMobile = window.innerWidth <= 768;
+
+const STAR_COUNT = isMobile ? 40 : 120;
+const HEART_COUNT = isMobile ? 45 : 140;
+
 /* ESTRELLAS */
 
 const stars = document.getElementById("stars");
 
-for(let i=0;i<120;i++){
+for(let i=0;i<STAR_COUNT;i++){
 
     const star = document.createElement("div");
 
@@ -433,13 +460,13 @@ for(let i=0;i<120;i++){
 
 const hearts = document.getElementById("hearts");
 
-for(let i=0;i<140;i++){
+for(let i=0;i<HEART_COUNT;i++){
 
     const heart = document.createElement("img");
 
     heart.classList.add("pixel-heart");
 
-    heart.src = "lluvia.png";
+    heart.src = "lluvia.webp";
 
     heart.style.left =
     Math.random()*100 + "%";
