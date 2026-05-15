@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CUCO - Amor de Siempre</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    overflow:hidden;
+    height:100vh;
+
+    font-family:'Press Start 2P', cursive;
+
+    background:
+    linear-gradient(
+    rgba(255,120,180,0.25),
+    rgba(255,120,180,0.25)),
+    url("fondo.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+}
+
+/* ESTRELLAS */
+
+.stars{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+}
+
+.star{
+
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    background:white;
+
+    border-radius:50%;
+
+    animation:blink 2s infinite;
+
+    box-shadow:
+    0 0 10px white,
+    0 0 20px white;
+}
+
+@keyframes blink{
+
+    0%,100%{
+        opacity:0.2;
+    }
+
+    50%{
+        opacity:1;
+    }
+}
+
+/* LLUVIA DE CORAZONES */
+
+.hearts{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    pointer-events:none;
+}
+
+.pixel-heart{
+
+    position:absolute;
+
+    width:55px;
+
+    animation:fall linear infinite;
+
+    image-rendering:pixelated;
+
+    filter:
+    drop-shadow(0 0 8px #ff4da6)
+    drop-shadow(0 0 20px #ff006a)
+    drop-shadow(0 0 35px #ff66b3);
+
+    pointer-events:none;
+    user-select:none;
+
+    opacity:0.95;
+}
+
+@keyframes fall{
+
+    0%{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+}
+
+/* CONTENIDO */
+
+.container{
+
+    position:relative;
+
+    z-index:5;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    width:100%;
+}
+
+/* CORAZON PRINCIPAL */
+
+.heart-wrapper{
+
+    animation:pulse 2s infinite;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin-bottom:40px;
+}
+
+.main-heart{
+
+    width:340px;
+
+    image-rendering:pixelated;
+
+    filter:
+    drop-shadow(0 0 15px #ff4da6)
+    drop-shadow(0 0 40px #ff0080)
+    drop-shadow(0 0 80px #ff66b3);
+
+    user-select:none;
+    pointer-events:none;
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.05);
+    }
+}
+
+/* PANEL */
+
+.music-box{
+
+    background:rgba(0,0,0,0.45);
+
+    border:4px solid #ff6fb5;
+
+    border-radius:25px;
+
+    padding:22px;
+
+    width:560px;
+    max-width:90%;
+
+    color:white;
+
+    backdrop-filter:blur(6px);
+
+    box-shadow:
+    0 0 25px #ff4da6,
+    0 0 50px rgba(255,0,128,0.5);
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+/* TITULO */
+
+.title{
+
+    font-size:22px;
+
+    color:white;
+
+    text-shadow:
+    0 0 10px #ff4da6,
+    0 0 20px #ff0080;
+
+    margin-bottom:25px;
+
+    text-align:center;
+
+    width:100%;
+
+    line-height:1.5;
+}
+
+/* SUBTITULO */
+
+.subtitle{
+
+    font-size:13px;
+
+    color:#ffd6ea;
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+    width:100%;
+}
+
+/* LINEA */
+
+.line{
+
+    margin:20px auto;
+
+    width:80%;
+    height:6px;
+
+    border-radius:20px;
+
+    background:#ff6fb5;
+
+    box-shadow:
+    0 0 10px #ff6fb5,
+    0 0 20px #ff6fb5;
+}
+
+/* LETRA */
+
+.lyrics{
+
+    font-size:14px;
+
+    color:#fff0f7;
+
+    margin-top:20px;
+
+    text-shadow:
+    0 0 8px #ff80bf;
+
+    text-align:center;
+
+    width:100%;
+}
+
+/* MENSAJE */
+
+.click-message{
+
+    position:absolute;
+
+    top:20px;
+    left:20px;
+
+    background:rgba(0,0,0,0.4);
+
+    border:3px solid #ff6fb5;
+
+    padding:20px;
+
+    color:white;
+
+    width:260px;
+
+    font-size:12px;
+
+    line-height:1.8;
+
+    box-shadow:
+    0 0 15px #ff4da6;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .main-heart{
+        width:220px;
+    }
+
+    .title{
+        font-size:15px;
+    }
+
+    .lyrics{
+        font-size:11px;
+    }
+
+    .music-box{
+        padding:18px;
+    }
+
+    .click-message{
+        width:200px;
+        font-size:10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- AUDIO -->
+
+<audio id="music" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ESTRELLAS -->
+
+<div class="stars" id="stars"></div>
+
+<!-- LLUVIA -->
+
+<div class="hearts" id="hearts"></div>
+
+
+<!-- CONTENIDO -->
+
+<div class="container">
+
+    <!-- CORAZON -->
+
+    <div class="heart-wrapper">
+        <img src="corazon.png" class="main-heart">
+    </div>
+
+    <!-- PANEL -->
+
+    <div class="music-box">
+
+        <div class="title">
+             CUCO - Amor de Siempre 
+        </div>
+
+        <div class="subtitle">
+            ♫ Haz clic para reproducir la música ♫
+        </div>
+
+        <div class="line"></div>
+
+        <div class="lyrics">
+            Eres mi amor de siempre... 
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+/* REPRODUCIR MUSICA */
+
+document.body.addEventListener("click", () => {
+
+    document.getElementById("music").play();
+
+}, { once:true });
+
+/* ESTRELLAS */
+
+const stars = document.getElementById("stars");
+
+for(let i=0;i<120;i++){
+
+    const star = document.createElement("div");
+
+    star.classList.add("star");
+
+    star.style.left = Math.random()*100 + "%";
+
+    star.style.top = Math.random()*100 + "%";
+
+    star.style.animationDuration =
+    (Math.random()*3+1)+"s";
+
+    stars.appendChild(star);
+}
+
+/* LLUVIA DE CORAZONES */
+
+const hearts = document.getElementById("hearts");
+
+for(let i=0;i<140;i++){
+
+    const heart = document.createElement("img");
+
+    heart.classList.add("pixel-heart");
+
+    heart.src = "lluvia.png";
+
+    heart.style.left =
+    Math.random()*100 + "%";
+
+    heart.style.animationDuration =
+    (Math.random()*8+5)+"s";
+
+    heart.style.animationDelay =
+    Math.random()*5+"s";
+
+    heart.style.width =
+    (Math.random()*45+35)+"px";
+
+    hearts.appendChild(heart);
+}
+
+</script>
+
+</body>
+</html>
